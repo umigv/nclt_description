@@ -1,0 +1,168 @@
+<!--
+BSD 3-Clause License
+
+Copyright (c) 2018, UMIGV
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice, this
+  list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of the copyright holder nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS AS IS
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?xml version="1.0"?>
+<robot name="nclt">
+    <link name="base_link"/>
+    <link name="body"/>
+    <link name="vel"/>
+    <link name="lb3"/>
+    <link name="imu"/>
+    <link name="fog"/>
+    <link name="gps"/>
+    <link name="rtk"/>
+    <link name="h30"/>
+    <link name="h04"/>
+    <link name="c0"/>
+    <link name="c1"/>
+    <link name="c2"/>
+    <link name="c3"/>
+    <link name="c4"/>
+    <link name="c5"/>
+
+    <joint name="base_link,body" type="fixed">
+        <parent link="base_link"/>
+        <child link="body"/>
+        <origin rpy="3.141592653589793 0 0"/>
+    </joint>
+
+    <joint name="body,vel" type="fixed">
+        <parent link="body"/>
+        <child link="vel"/>
+        <origin
+            xyz="0.002 -0.004 -0.957"
+            rpy="0.01408480706359424 0.002897246558310587 -1.5830659914364167"
+        />
+    </joint>
+
+    <joint name="body,lb3" type="fixed">
+        <parent link="body"/>
+        <child link="lb3"/>
+        <origin
+            xyz="0.035 0.002 -1.23"
+            rpy="-3.140370923113397 -0.004014257279586958 0.008726646259971648"
+        />
+    </joint>
+
+    <joint name="body,imu" type="fixed">
+        <parent link="body"/>
+        <child link="imu"/>
+        <origin xyz="-0.11 -0.18 -0.71" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="body,fog" type="fixed">
+        <parent link="body"/>
+        <child link="fog"/>
+        <origin xyz="0 -0.25 -0.49" rpy="0 0 0"/>
+    </joint>
+
+    <joint name="body,gps" type="fixed">
+        <parent link="body"/>
+        <child link="gps"/>
+        <origin xyz="0 -0.25 -0.51"/>
+    </joint>
+
+    <joint name="body,rtk" type="fixed">
+        <parent link="body"/>
+        <child link="rtk"/>
+        <origin xyz="-0.24 0 -1.24"/>
+    </joint>
+
+    <joint name="body,h30" type="fixed">
+        <parent link="body"/>
+        <child link="h30"/>
+        <origin xyz="0.28 0 -0.44" rpy="3.141592653589793 0 0"/>
+    </joint>
+
+    <joint name="body,h04" type="fixed">
+        <parent link="body"/>
+        <child link="h04"/>
+        <origin
+            xyz="0.31 0 -0.38"
+            rpy="3.141592653589793 -0.6981317007977318 0"
+        />
+    </joint>
+
+    <joint name="lb3,c0" type="fixed">
+        <parent link="lb3"/>
+        <child link="c0"/>
+        <origin
+            xyz="0.000920 -0.000569 0.062413"
+            rpy="-0.0004909960251710448 0.0034289960215156995 0.00434000553117918"
+        />
+    </joint>
+
+    <joint name="lb3,c1" type="fixed">
+        <parent link="lb3"/>
+        <child link="c1"/>
+        <origin
+            xyz="0.014543 0.039337 0.000398"
+            rpy="-2.4164040035163117 1.5656280054540135 -1.1609590019595066"
+        />
+    </joint>
+
+    <joint name="lb3,c2" type="fixed">
+        <parent link="lb3"/>
+        <child link="c2"/>
+        <origin
+            xyz="-0.032674 0.025928 0.000176"
+            rpy="2.794290004614462 1.5679400082075452 -0.9791500085480196"
+        />
+    </joint>
+
+    <joint name="lb3,c3" type="fixed">
+        <parent link="lb3"/>
+        <child link="c3"/>
+        <origin
+            xyz="-0.034969 -0.022993 0.000030"
+            rpy="0.0487695608360899 0.02736571561696858 -0.017089391520093564"
+        />
+    </joint>
+
+    <joint name="lb3,c4" type="fixed">
+        <parent link="lb3"/>
+        <child link="c4"/>
+        <origin
+            xyz="0.011238 -0.040367 -0.000393"
+            rpy="-2.7967029921185147 1.5675210070140189 2.2248220040516973"
+        />
+    </joint>
+
+    <joint name="lb3,c5" type="fixed">
+        <parent link="lb3"/>
+        <child link="c5"/>
+        <origin
+            xyz="0.041862 -0.001905 -0.000212"
+            rpy="2.807686994873138 1.5692979965386444 2.803345994504285"
+        />
+    </joint>
+</robot>
